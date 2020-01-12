@@ -156,7 +156,7 @@
 
         <Button
             android:id="@+id/multiply"
-            android:text="X"
+            android:text="×"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_columnWeight="1" />
@@ -194,6 +194,13 @@
         // 5 row
 
         <Button
+            android:id="@+id/plus_minus"
+            android:text="±"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_columnWeight="1" />
+
+        <Button
             android:id="@+id/num0"
             android:text="0"
             android:layout_width="0dp"
@@ -213,12 +220,6 @@
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_columnWeight="1" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_columnWeight="1" />
-
 
     </GridLayout>
 
