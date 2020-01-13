@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+
 public class MainActivity extends AppCompatActivity {
 
     //사칙연산 파악을 위한 type
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     String number1="";
     String number2="";
     double d1,d2;
+
+
 
 
     @Override
@@ -46,16 +50,86 @@ public class MainActivity extends AppCompatActivity {
 
         final Button delete = findViewById(R.id.delete);
         final Button clear = findViewById(R.id.clear);
+
+        //Clear Button
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progress.setText("");
                 result.setText("");
+            }
+        });
+
+        //Number Button (0~9)
+        num0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 0);
+            }
+        });
+        num1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 1);
+            }
+        });
+        num2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 2);
+            }
+        });
+        num3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 3);
+            }
+        });
+        num4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 4);
+            }
+        });
+        num5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 5);
+            }
+        });
+        num6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 6);
+            }
+        });
+        num7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 7);
+            }
+        });
+        num8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 8);
+            }
+        });
+        num9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress.setText(progress.getText().toString() + 9);
+            }
+        });
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
 
-        Button.OnClickListener mListener = new Button.OnClickListener() {
+        /*Button.OnClickListener mListener = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (progress == null){
@@ -127,16 +201,16 @@ public class MainActivity extends AppCompatActivity {
                         }else if (type == DIVIDE) {
                             db_result = d1 / d2;
                             result.setText("" + db_result);
-                        }/*else if (type == REMAINDER) {
+                        }else if (type == REMAINDER) {
                             result = d1 % d2;
                             et_result.setText("" + db_result);
-                        }*/
+                        }
 
-                        number1 = result.getText().toString();
+                       `number1 = result.getText().toString();
                         result.setText(number1);
                         break;
 
-                    /*case R.id.num0 :
+                    case R.id.num0 :
                         result.setText(result.getText().toString() + 0); break;
                     case R.id.num1 :
                         result.setText(result.getText().toString() + 1); break;
@@ -157,12 +231,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.num9 :
                         result.setText(result.getText().toString() + 9); break;
                     case R.id.point :
-                        result.setText(result.getText().toString() + "."); break;*/
+                        result.setText(result.getText().toString() + "."); break;
                 }
             }
-        };
+        };*/
 
-        Button.OnClickListener number = new Button.OnClickListener(){
+       /* Button.OnClickListener number = new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
@@ -210,9 +284,10 @@ public class MainActivity extends AppCompatActivity {
         minus.setOnClickListener(mListener);
         multiply.setOnClickListener(mListener);
         divide.setOnClickListener(mListener);
-        //remainder.setOnClickListener(mListener);
+        remainder.setOnClickListener(mListener);
         result.setOnClickListener(mListener);
         delete.setOnClickListener(mListener);
+        */
 
 
 
