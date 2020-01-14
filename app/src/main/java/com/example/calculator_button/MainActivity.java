@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         final Button multiply = findViewById(R.id.multiply);
         final Button divide = findViewById(R.id.divide);
 
-
         final Button clear = findViewById(R.id.Clear);
 
         View.OnClickListener btn_click = new View.OnClickListener() {
@@ -78,22 +77,22 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 else if(v==plus){
-                    a=Integer.valueOf(progress.getText().toString().trim());
+                    a=Integer.valueOf(progress.getText().toString());
                     progress.setText("");
                     where=1;
                 }
                 else if(v==minus){
-                    a=Integer.valueOf(progress.getText().toString().trim());
+                    a=Integer.valueOf(progress.getText().toString());
                     progress.setText("");
                     where=2;
                 }
                 else if(v==multiply){
-                    a=Integer.valueOf(progress.getText().toString().trim());
+                    a=Integer.valueOf(progress.getText().toString());
                     progress.setText("");
                     where=3;
                 }
                 else if(v==divide){
-                    a=Integer.valueOf(progress.getText().toString().trim());
+                    a=Integer.valueOf(progress.getText().toString());
                     progress.setText("");
                     where=4;
                 }
@@ -118,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(v==clear){
                     progress.setText("");
+                    Toast.makeText(getApplicationContext(), "clear", Toast.LENGTH_SHORT).show();
                     a=0;
                 }
             }
