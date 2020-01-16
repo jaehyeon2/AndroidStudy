@@ -13,19 +13,22 @@ import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
+    String search_str;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final EditText search = findViewById(R.id.Search);
-        final String search_str = search.getText().toString();
+
         final Button s_btn = findViewById(R.id.S_button);
 
         s_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent search = new Intent(Intent.ACTION_VIEW, Uri.parse("http://youtube.com/results?search_query=" + search_str));
+                search_str = "http://youtube.com/results?search_query=" + search.getText().toString();
+                Intent search = new Intent(Intent.ACTION_VIEW, Uri.parse(search_str));
                 startActivity(search);
             }
         });
