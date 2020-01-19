@@ -9,27 +9,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.net.URI;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    String search_str;
+    YouTubePlayerView youtubeview;
+    Button button;
+    YouTubePlayer.OnInitializedListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText search = findViewById(R.id.Search);
+        button = findViewById(R.id.youtube_search_btn);
+        youtubeview = findViewById(R.id.youtube_view);
+        listener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayer.loadVideo("cCGPj4dpv38");
+            }
 
-        final Button s_btn = findViewById(R.id.S_button);
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
 
-        s_btn.setOnClickListener(new View.OnClickListener() {
+            }
+        };
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search_str = "http://youtube.com/results?search_query=" + search.getText().toString();
-                Intent search = new Intent(Intent.ACTION_VIEW, Uri.parse(search_str));
-                startActivity(search);
+                youtubeview.initialize("AIzaSyDShnGu42fh58FgH3slHapux6MJQ_RbFk0", listener); //String 값은 API_KEY
             }
         });
     }
