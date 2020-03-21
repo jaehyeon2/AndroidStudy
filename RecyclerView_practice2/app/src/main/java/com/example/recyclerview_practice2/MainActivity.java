@@ -1,4 +1,4 @@
-package com.example.recyclerview_practice1;
+package com.example.recyclerview_practice2;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.recyclerview_practice2.RecyclerView_Adapter;
 
 import java.util.ArrayList;
 
@@ -16,28 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //데이터 리스트 생성
         ArrayList<String> list = new ArrayList<>();
         for(int i=0; i<10; i++) {
             list.add(String.format("TEXT %d", i+1));
         }
 
-        /*addbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                num++;
-            }
-        });
-
-        dltbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                num--;
-            }
-        });*/
-
-
-        //LinearLayoutManager 객체 지정
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
