@@ -5,4 +5,5 @@ https://itpangpang.xyz/175
 
 ### SQLite_practice3  
 http://blog.naver.com/PostView.nhn?blogId=hee072794&logNo=220619425456  
-다른 방식으로 테이블을 설정해봄. result 부분이 제대로 나오지 않음..?  
+다른 방식으로 테이블을 설정해봄. result 부분이 제대로 나오지 않음  
+SQLite 테이블 확인하는 메소드 수정 필요  
